@@ -17,13 +17,11 @@ body {
 
 header {
     grid-area: header;
-    background-color: aqua;
 
 }
 
 #aboutSection {
     grid-area: about;
-    background-color: blueviolet;
     padding: 2em;
     display: grid;
     grid-row-gap: 1em;
@@ -49,7 +47,6 @@ header {
 #tomatoSection {
     grid-area: main;
     padding: 2em;
-    background-color: chartreuse;
     display: grid;
     grid-row-gap: 1em;
     grid-template-columns: 1fr;
@@ -57,7 +54,7 @@ header {
     grid-template-areas: 
     "timeBreakdown"
     "timer"
-    "tomato";
+    "tomatoArea";
 }
 
 #timeBreakdown{
@@ -69,10 +66,9 @@ header {
 }
 
 #tomatoContainer {
-    grid-area: tomato;
+    grid-area: tomatoArea;
 }
 
 footer {
     grid-area: footer;
-    background-color: darkcyan;
 }
