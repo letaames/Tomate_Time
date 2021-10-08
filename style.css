@@ -1,9 +1,78 @@
+html,
 body {
     margin: 0;
     padding: 0;
-    color:red;
+    background-color: #EFF6EF;
 }
 
 #bodyContainer {
-    
+    display: grid;
+    grid-template-rows: 1fr 4fr 10fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" 
+    "about" 
+    "main" 
+    "footer";
+}
+
+header {
+    grid-area: header;
+    background-color: aqua;
+
+}
+
+#aboutSection {
+    grid-area: about;
+    background-color: blueviolet;
+    padding: 2em;
+    display: grid;
+    grid-row-gap: 1em;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "intro intro"
+    "section1 section2";
+}
+
+#introduction{
+    grid-area: intro;
+}
+
+#section1 {
+    grid-area: section1;
+}
+
+#section2 {
+    grid-area: section2;
+}
+
+#tomatoSection {
+    grid-area: main;
+    padding: 2em;
+    background-color: chartreuse;
+    display: grid;
+    grid-row-gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.5fr 12.5fr;
+    grid-template-areas: 
+    "timeBreakdown"
+    "timer"
+    "tomato";
+}
+
+#timeBreakdown{
+    grid-area: timeBreakdown;
+}
+
+#timer {
+    grid-area: timer;
+}
+
+#tomatoContainer {
+    grid-area: tomato;
+}
+
+footer {
+    grid-area: footer;
+    background-color: darkcyan;
 }
