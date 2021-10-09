@@ -98,7 +98,7 @@ header {
 
   @keyframes x {
     100% {
-      transform: translateX(calc(500px - var(--width)));
+      transform: translateX(calc(100%  - var(--width)));
     }
   }
   @keyframes y {
