@@ -2,6 +2,12 @@ var pomTime;
 var sbTime;
 var lbTime;
 
+var isPom = false;
+var isLB = false;
+var isSB = false;
+
+var PomNum = 0;
+
 var running = false;
 
 var holdTime = 0;
@@ -16,6 +22,7 @@ var startTime;
 
 document.getElementById("sumbitTime").addEventListener("click", getData);
 document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
+document.getElementById("addFive").addEventListener("click", add5);
 
 
 function timer(mseconds) {
@@ -26,12 +33,14 @@ function timer(mseconds) {
 
     const then = now + mseconds;
 
+    running = true;
+
     countdown = setInterval(() => {
-        console.log("hi")
         const msecondsLeft = Math.round(then - Date.now());
         // check if we should stop it!
         if(msecondsLeft < 0) {
           clearInterval(countdown);
+          makeFullPom()
           return;
         }
         // display it
@@ -56,10 +65,16 @@ function getData(event) {
     // lbTime = document.getElementById("lbSet").value === "" ? 15: parseInt(document.getElementById("lbSet").value);
     lbTime = fn("lbSet", 15);
     startTimer(pomTime);
+    startPom();
   }
 
 function fn(id, def) {
     return inputToMS(document.getElementById(id).value === "" ? def : parseInt(document.getElementById(id).value));
+}
+
+function startPom() {
+    isPom = true;
+    PomNum +=1;
 }
 
 function startTimer(beginningTime) {
@@ -67,6 +82,7 @@ function startTimer(beginningTime) {
     running = true;
     timer(beginningTime);
     document.getElementById("pauseBtn").classList.remove("hide");
+    document.getElementById("addFive").classList.remove("hide");
     document.getElementById("pauseBtn").innerHTML == "Pause"
 }
 
@@ -74,7 +90,6 @@ function pauseTimer(event){
     event.preventDefault()
     if(running){
         running = false;
-        console.log("hold", holdTime);
         clearInterval(countdown);
         displayCountdown(holdTime);
         changeValue()
@@ -103,54 +118,53 @@ function displayCountdown(TimeMS) {
     var hours = Math.floor((TimeMS % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((TimeMS % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((TimeMS % (1000 * 60)) / 1000);
-    console.log("times", hours, minutes, seconds)
 
     const display = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : '' }${minutes}:${seconds < 10 ? '0' : '' }${seconds}`;
-    console.log("we're in", display)
     document.getElementById("timer").innerHTML = display;
     document.title = display;
     
 
 }
 
-// function wrapper(time) {
-    // startTime = time * 60000
-    // return function Countdown() {
-
-    // var TimeMS = startTime;
-
-    // Get today's date and time
-  
-    // Time calculations for days, hours, minutes and seconds
-    
-    // var hours = addPadding(Math.floor((TimeMS % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-    // var minutes = addPadding(Math.floor((TimeMS % (1000 * 60 * 60)) / (1000 * 60)));
-    // var seconds = addPadding(Math.floor((TimeMS % (1000 * 60)) / 1000));
-    // console.log("times", hours, minutes, seconds)
-
-// document.getElementById("timer").innerHTML = hours + ":"
-//   + minutes + ":" + seconds;
-
-// startTime-=1000;
 
 
-    // If the count down is over, write some text 
-    // if (TimeMS < 0) {
-        // clearInterval();
-        // document.getElementById("demo").innerHTML = "EXPIRED";
-    //   }
-    // }
-// }
+// Pomodoro tracker
 
-// function addPadding(inputTime){
-//convert to string
-//  var timeString = inputTime.toString()
-// check if length is equal to one, if it is then we pad two 
-// if(timeString.length === 1) {
-    // return timeString.padStart(2,0)
-// }
-// else {
-    // return inputTime
-// }
+function makeFullPom() {
+    if (isPom === true) {
+        isPom = false;
+        if(PomNum % 4 === 0) {
+            startTimer(lbTime);
+            isLB = true;
+            isSB = false;
+            }
+        else {
+            startTimer(sbTime);
+            isLB = false;
+            isSB = true;
+        }
+    }
+    else {
+        isLB = false;
+        startPom();
+        startTimer(pomTime);
+    }
+}
 
-// }
+function add5(event) {
+    event.preventDefault();
+    if (running) {
+        running = false;
+        console.log("add 5while running after loop", running);
+        clearInterval(countdown);
+        holdTime+= 300000;
+        timer(holdTime);
+
+    }
+    else {
+        console.log("add 5while pause", running);
+        clearInterval(countdown);
+        holdTime+= 300000;
+        displayCountdown(holdTime)  
+    }
+}
