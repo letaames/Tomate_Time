@@ -83,17 +83,19 @@ header {
     width: 100%;
 }
 
-.tomatoSVG { 
+#tomatoSVG { 
         width: var(--width);
         height: var(--width);
 }
 
 .x {
     animation: x var(--x-speed) linear infinite alternate;
+    animation-iteration-count: infinite;
 }
 
 .y {
     animation: y var(--y-speed) linear infinite alternate;
+    animation-iteration-count: infinite;
   }
 
   @keyframes x {
@@ -106,6 +108,30 @@ header {
       transform: translateY(calc(500px - var(--width)));
     }
   }
+
+.fadeOut {
+    animation-duration: 4s;
+}
+
+.fadeIn {
+    animation-duration: 4s;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;} 
+    
+ } 
+
+ @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;} 
+ } 
+
+.home {
+    text-align: center;
+}
+
 
 
 

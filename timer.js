@@ -1,22 +1,4 @@
-var pomTime;
-var sbTime;
-var lbTime;
 
-var isPom = false;
-var isLB = false;
-var isSB = false;
-
-var PomNum = 0;
-
-var running = false;
-
-var holdTime = 0;
-
-let countdown;
-
-var cycleNum = 0;
-
-var startTime;
 
 
 
@@ -64,8 +46,9 @@ function getData(event) {
     sbTime = fn("sbSet", 5);
     // lbTime = document.getElementById("lbSet").value === "" ? 15: parseInt(document.getElementById("lbSet").value);
     lbTime = fn("lbSet", 15);
-    startTimer(pomTime);
     startPom();
+    startTimer(pomTime);
+    
   }
 
 function fn(id, def) {
@@ -78,6 +61,7 @@ function startPom() {
 }
 
 function startTimer(beginningTime) {
+    controlMove();
     clearInterval(countdown);
     running = true;
     timer(beginningTime);
