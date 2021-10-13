@@ -9,7 +9,7 @@ function playAlarm() {
     if(alarming === false) {
         alarmSound.fade(0, 1, 2000)
         // alarmSound.on('fade', () => alarmSound.fade(1, 0, 5000))
-        alarmSound.on('fade', resetAlarm);
+        alarmSound.once('fade', resetAlarm);
         alarmSound.play('alarm');
         console.log("play")
         alarming = true; 
@@ -28,5 +28,5 @@ function fadeOutAlarm() {
 
 function resetAlarm() {
     alarmSound.fade(1, 0, 5000);
-    alarmSound.on('fade', () => alarming = false);
+    alarmSound.once('fade', () => alarming = false);
 }
