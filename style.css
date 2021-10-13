@@ -95,7 +95,15 @@ header {
         /* margin:auto; */
         margin: 0 auto;
         display: block;
-        animation: bounceAround 5s 0.3s linear infinite;
+}
+
+.bounce {
+    animation: bounceAround 10s 0.3s linear infinite;
+}
+
+
+.scaleDown {
+    animation: scaleDown 10s;
 }
 
 @keyframes bounceAround {
@@ -162,6 +170,10 @@ header {
 /* .home { */
     /* text-align: center; */
 /* } */
+
+@keyframes scaleDown {
+    100% {transform: scale(.125);}
+}
 
 
 
