@@ -17,3 +17,5 @@ let countdown;
 var cycleNum = 0;
 
 var startTime;
+
+var alarming = false;

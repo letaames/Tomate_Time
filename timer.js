@@ -17,12 +17,18 @@ function timer(mseconds) {
 
     running = true;
 
+    alarming = false;
+    
     countdown = setInterval(() => {
         const msecondsLeft = Math.round(then - Date.now());
         // check if we should stop it!
+        if(msecondsLeft <= 2000) {
+            playAlarm();
+            // fadeOutAlarm();
+        }
         if(msecondsLeft < 0) {
-          clearInterval(countdown);
-          makeFullPom()
+            clearInterval(countdown);
+            makeFullPom()
           return;
         }
         // display it

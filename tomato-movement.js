@@ -1,10 +1,10 @@
 controlMove();
 
-console.log("pom", isPom)
+// console.log("pom", isPom)
 
 function controlMove() {
     if (isPom === false) {
-        console.log(isPom);
+        // console.log(isPom);
         document.getElementById("tomatoSVG").classList.remove("bounce")
         // document.getElementsByClassName("y")[0].style.animationIterationCount = 0;
         // document.getElementById("tomatoSVG").classList.remove("scaleDown");
@@ -12,7 +12,7 @@ function controlMove() {
         // document.getElementById("tomatoSVG").classList.add("fadeIn");
     }
     else {
-        console.log(isPom);
+        // console.log(isPom);
         document.getElementById("tomatoSVG").classList.add("bounce")
         // document.getElementById("tomatoSVG").classList.add("scaleDown");
         
