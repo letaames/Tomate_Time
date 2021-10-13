@@ -17,8 +17,8 @@ function timer(mseconds) {
 
     running = true;
 
-    alarming = false;
-    
+    // alarming = false;
+
     countdown = setInterval(() => {
         const msecondsLeft = Math.round(then - Date.now());
         // check if we should stop it!
@@ -26,7 +26,7 @@ function timer(mseconds) {
             playAlarm();
             // fadeOutAlarm();
         }
-        if(msecondsLeft < 0) {
+        if(msecondsLeft <= 0) {
             clearInterval(countdown);
             makeFullPom()
           return;
