@@ -49,10 +49,77 @@ header {
 
 #section1 {
     grid-area: section1;
+    display: grid;
+    grid-row-gap: .5em;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1.5fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    ". title title ."
+    ". desc1 entry1 ."
+    ". desc2 entry2 ."
+    ". desc3 entry3 ."
+    ". . . ."
+    ". start start ."
+
 }
+
+#title {
+    grid-area: title;
+    text-align: center;
+}
+
+#pomLabel {
+    grid-area: desc1;
+}
+
+#sbLabel {
+    grid-area: desc2;
+}
+
+#lbLabel {
+    grid-area: desc3;
+}
+
+#pomSet {
+    grid-area: entry1;
+}
+
+#sbSet {
+    grid-area: entry2;
+
+}
+
+#lbSet {
+    grid-area: entry3;
+}
+
+#sumbitTime {
+    grid-area: start;
+}
+
+
 
 #section2 {
     grid-area: section2;
+
+    display: grid;
+    grid-row-gap: .5em;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    ". intro intro ."
+    ". instructions instructions ."
+    ;
+
+}
+
+#intro {
+    text-align: center;
+    grid-area: intro;
+}
+
+#instructions {
+    grid-area: instructions;
 }
 
 #tomatoSection {

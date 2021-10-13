@@ -105,6 +105,7 @@ function changeValue() {
  
 // setInterval(wrapper(pomTime), 1000)
 function displayCountdown(TimeMS) {
+    fillInDesc();
     var hours = Math.floor((TimeMS % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((TimeMS % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((TimeMS % (1000 * 60)) / 1000);
@@ -156,5 +157,26 @@ function add5(event) {
         clearInterval(countdown);
         holdTime+= 300000;
         displayCountdown(holdTime)  
+    }
+}
+
+function fillInDesc() {
+    // console.log("in desc",isPom);
+    if (isPom === true) {
+        document.getElementById("timeDesc").innerHTML = "Time to work!";
+        // console.log("in desc",isPom);
+    }
+    else 
+        if (isSB === true) {
+        document.getElementById("timeDesc").innerHTML = "Time for a short break!";
+        // console.log("in desc SB", isSB);
+    }
+    else 
+        if (isLB === true) {
+        document.getElementById("timeDesc").innerHTML = "Time for a long break!";
+        // console.log("in desc LB", isSB);
+    }
+    else {
+        document.getElementById("timeDesc").innerHTML = "Enter times above to get started";
     }
 }

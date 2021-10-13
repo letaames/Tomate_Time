@@ -15,22 +15,44 @@
         <div id="aboutSection">
             <div id="introduction"></div> 
             <form id="section1">
+                <p id="title">Enter Times Below to Get Started</p>
+                <label id="pomLabel" for="pomSet">Working session (minutes)</label>
                 <input type="number" placeholder="25" id=pomSet>
                     <div id="inputAreaMins"></div>
+                    <!-- <p class="units">minutes</p> -->
                 </input>
+                <!-- <p class="units">minutes</p> -->
+                <label id="sbLabel" for="sbSet">Short break (minutes)</label>
                 <input type="number" placeholder="5" id=sbSet>
                     <div id="inputAreaMins"></div>
                 </input>
+                <!-- <p class="units">minutes</p> -->
+                <label id="lbLabel" for="lbSet">Long break (minutes)</label>
                 <input type="number" placeholder="15" id=lbSet>
                     <div id="inputAreaMins"></div>
                 </input>
+                <!-- <p class="units">minutes</p> -->
                 <button id="sumbitTime">Let's Go!</button>
             </form>
-            <div id="section2"></div>
+            <div id="section2">
+                <p id="intro">Welcome to my tomato timer!</p><br>
+                <g id="instructions">
+                <p>A standard setup is four 25-minute focus sessions seperated by 5-minute short breaks and followed by a 15-minute long break.
+                You can use these default times or adjust the time in each category by inputting values in the fields on the left. <br>
+                <br>
+                Your time will count down below and automatically roll into the following section and you'll hear a piano tune when each section ends. 
+                <br>
+                <br>
+                Keeping to the time is important, but you can add 5-minute increments or pause the timer once you get started by pressing the buttons below the timer countdown.    
+                </p>
+            </g>
+                
+            </div>
         </div>
         <div id="tomatoSection">
             <div id="timeBreakdown"></div> 
             <div id="timerContainer">
+                <p id="timeDesc"></p>
                 <div id="timer">00:00:00</div>
                 <button id="pauseBtn" class="hide">Pause</button>
                 <button id="addFive" class="hide">Add 5 minutes</button>
