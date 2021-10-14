@@ -18,7 +18,7 @@ body {
 
 #bodyContainer {
     display: grid;
-    grid-template-rows: 1fr 4fr 10fr 1fr;
+    grid-template-rows: .5fr 3fr 10fr 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: "header" 
     "about" 
@@ -28,6 +28,11 @@ body {
 
 header {
     grid-area: header;
+    text-align: center;
+    /* margin: 0 auto; */
+    /* display: block; */
+    padding-top: 5%;
+    padding-bottom: 5%;
 
 }
 
@@ -36,10 +41,11 @@ header {
     padding: 2em;
     display: grid;
     grid-row-gap: 1em;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: 1fr; */
     grid-template-areas: 
-    "intro intro"
+    /* "intro intro" */
     "section1 section2";
 }
 
@@ -137,10 +143,32 @@ header {
 
 #timeBreakdown{
     grid-area: timeBreakdown;
+    text-align: center;
 }
 
 #timerContainer{
     grid-area: timer;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-row-gap: 1em;
+    column-gap: 1em;
+    grid-template-areas: 
+    ". timerDisplay timerDisplay ."
+    ". button1 button2 .";
+}
+
+#timer {
+    grid-area: timerDisplay;
+    text-align: center;
+}
+
+#pauseBtn {
+    grid-area: button1;
+}
+
+#addFive {
+    grid-area: button2;
 }
 
 #tomatoContainer {
