@@ -2,7 +2,19 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: #EFF6EF;
+    background-color: #496149;
+    color: white;
+}
+
+
+
+button {
+    background-color: #657650;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    border: none;
+
 }
 
 .hide {
@@ -31,8 +43,10 @@ header {
     text-align: center;
     /* margin: 0 auto; */
     /* display: block; */
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: 'Playfair Display', serif, bold;
+    font-size: 3em;
 
 }
 
@@ -58,7 +72,7 @@ header {
     display: grid;
     grid-row-gap: .5em;
     grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1.5fr;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr .5fr;
     grid-template-areas: 
     ". title title ."
     ". desc1 entry1 ."
@@ -111,7 +125,7 @@ header {
     display: grid;
     grid-row-gap: .5em;
     grid-template-rows: 1fr 4fr;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-areas: 
     ". intro intro ."
     ". instructions instructions ."
