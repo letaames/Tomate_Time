@@ -1,8 +1,8 @@
 
 
 
-
-document.getElementById("sumbitTime").addEventListener("click", getData);
+document.getElementById("submitCustomTime").addEventListener("click", getData);
+document.getElementById("submitTime").addEventListener("click", getData);
 document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
 document.getElementById("addFive").addEventListener("click", add5);
 

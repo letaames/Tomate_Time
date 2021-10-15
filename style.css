@@ -81,14 +81,18 @@ header {
     display: none;
     grid-row-gap: .5em;
     column-gap: 1em;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(5,1fr);
     grid-template-areas: 
     ". title title title ."
     ". desc1 desc2 desc3 ."
     ". entry1 entry2 entry3 ."
-    /* ". start start ." */
+    ". startCustom startCustom startCustom ."
 
+}
+
+#submitCustomTime{
+    grid-area: startCustom;
 }
 
 #title {
@@ -121,7 +125,7 @@ header {
     grid-area: entry3;
 }
 
-#sumbitTime {
+#submitTime {
     grid-area: start;
 }
 
