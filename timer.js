@@ -78,8 +78,7 @@ function startTimer(beginningTime) {
     document.getElementById("addFive").classList.remove("hide");
     document.getElementById("pauseBtn").innerHTML = "Pause";
     document.getElementById("submitTime").innerHTML = "Reset";
-    document.getElementById("submitCustomTime").innerHTML = "Reset";
-    
+    document.getElementById("submitCustomTime").innerHTML = "Reset";   
 }
 
 function pauseTimer(event){
