@@ -17,6 +17,8 @@ function timer(mseconds) {
 
     running = true;
 
+    changeValue();
+
     // alarming = false;
 
     countdown = setInterval(() => {
@@ -95,11 +97,11 @@ function resumeTimer(){
 }
 
 function changeValue() {
-    if(document.getElementById("pauseBtn").innerHTML == "Pause") {
-        document.getElementById("pauseBtn").innerHTML = "Resume"
+    if(running) {
+        document.getElementById("pauseBtn").innerHTML = "Pause"
     }
     
-    else(document.getElementById("pauseBtn").innerHTML = "Pause")
+    else(document.getElementById("pauseBtn").innerHTML = "Resume")
 }
 
  
