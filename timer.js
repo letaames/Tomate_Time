@@ -36,7 +36,7 @@ function timer(mseconds) {
         // display it
         displayCountdown(msecondsLeft);
         holdTime = msecondsLeft;
-      }, 1000);
+      }, 500);
 
 }
 
