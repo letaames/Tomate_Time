@@ -54,6 +54,7 @@ function getData(event) {
     sbTime = fn("sbSet", 5);
     // lbTime = document.getElementById("lbSet").value === "" ? 15: parseInt(document.getElementById("lbSet").value);
     lbTime = fn("lbSet", 15);
+    PomNum=0;
     startPom();
     startTimer(pomTime);
     
@@ -75,7 +76,10 @@ function startTimer(beginningTime) {
     timer(beginningTime);
     document.getElementById("pauseBtn").classList.remove("hide");
     document.getElementById("addFive").classList.remove("hide");
-    document.getElementById("pauseBtn").innerHTML == "Pause"
+    document.getElementById("pauseBtn").innerHTML = "Pause";
+    document.getElementById("submitTime").innerHTML = "Reset";
+    document.getElementById("submitCustomTime").innerHTML = "Reset";
+    
 }
 
 function pauseTimer(event){
@@ -148,14 +152,12 @@ function add5(event) {
     event.preventDefault();
     if (running) {
         running = false;
-        console.log("add 5while running after loop", running);
         clearInterval(countdown);
         holdTime+= 300000;
         timer(holdTime);
 
     }
     else {
-        console.log("add 5while pause", running);
         clearInterval(countdown);
         holdTime+= 300000;
         displayCountdown(holdTime)  
