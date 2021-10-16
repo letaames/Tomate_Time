@@ -1,10 +1,12 @@
 
 
-
 document.getElementById("submitCustomTime").addEventListener("click", getData);
 document.getElementById("submitTime").addEventListener("click", getData);
 document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
 document.getElementById("addFive").addEventListener("click", add5);
+var manualProg = document.getElementById("switchItem").checked;
+
+
 
 
 function timer(mseconds) {
@@ -41,7 +43,8 @@ function timer(mseconds) {
 }
 
 function inputToMS(minutes) {
-    return minutes * 60000
+    return minutes * 60000;
+    // return minutes * 10000;
 }
 
 
@@ -54,6 +57,7 @@ function getData(event) {
     sbTime = fn("sbSet", 5);
     // lbTime = document.getElementById("lbSet").value === "" ? 15: parseInt(document.getElementById("lbSet").value);
     lbTime = fn("lbSet", 15);
+
     PomNum=0;
     startPom();
     startTimer(pomTime);
@@ -127,23 +131,53 @@ function displayCountdown(TimeMS) {
 // Pomodoro tracker
 
 function makeFullPom() {
+    debugger;
+    checkIfChecked();
+    console.log("in Make full pom", manualProg);
     if (isPom === true) {
         isPom = false;
         if(PomNum % 4 === 0) {
-            startTimer(lbTime);
-            isLB = true;
-            isSB = false;
+            if(manualProg){
+                holdTime = lBTime;
+                running = false;
+                isLB = true;
+                isSB = false;
+                manualProgression();
+                }
+            else {
+                startTimer(lbTime);
+                isLB = true;
+                isSB = false;
+                }
             }
         else {
-            startTimer(sbTime);
+            if(manualProg){
+
+                holdTime = sbTime;
+                isLB = false;
+                isSB = true;
+                manualProgression()
+            }
+            else {startTimer(sbTime);
             isLB = false;
             isSB = true;
+            }
         }
     }
     else {
-        isLB = false;
-        startPom();
-        startTimer(pomTime);
+        if(manualProg) {
+            isLB = false;
+            isSB = false;
+            holdTime = pomTime;
+            startPom();
+            manualProgression();
+        }
+        else {
+            isLB = false;
+            isSB = false;
+            startPom();
+            startTimer(pomTime);
+        }
     }
 }
 
@@ -180,6 +214,16 @@ function fillInDesc() {
         // console.log("in desc LB", isSB);
     }
     else {
-        document.getElementById("timeDesc").innerHTML = "Enter times above to get started";
+        document.getElementById("timeDesc").innerHTML = " ";
     }
-}
+    
+    }
+    function checkIfChecked() {
+        manualProg = document.getElementById("switchItem").checked;
+    }
+    function manualProgression(){
+            running = false;
+                clearInterval(countdown);
+                displayCountdown(holdTime);
+            document.getElementById("pauseBtn").innerHTML = "Next";
+        }
