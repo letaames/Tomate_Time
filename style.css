@@ -91,6 +91,7 @@ header {
     border: none;
     color: var(--accent);
     font-size: 1em;
+    padding-bottom: 1em;
 
 }
 
@@ -458,3 +459,17 @@ header {
 footer {
     grid-area: footer;
 }
+
+.box {
+    /* width: 300px; */
+    /* border: 1px solid #000; */
+    /* margin: 10px; */
+    /* cursor: pointer; */
+  }
+  .toggle-container {
+    transition: height 0.35s ease-in-out;
+    overflow: hidden;
+  }
+  .toggle-container:not(.active) {
+    display: none;
+  }
