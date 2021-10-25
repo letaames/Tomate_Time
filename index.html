@@ -38,6 +38,38 @@
             
                 
             <!-- </div> -->
+
+            <div class="box">
+                <div class="js-toggle active" data-container="section1">Click</div>
+                <div class="toggle-container open" id="section1">
+                    <form>
+                    <p id="title">Enter Times Below to Get Started</p>
+                    <label id="pomLabel" for="pomSet">Working session (minutes)</label>
+                    <input type="number" placeholder="25" id=pomSet>
+                        <div id="inputAreaMins"></div>
+                        <p class="units">minutes</p>
+                    </input>
+                    <p class="units">minutes</p>
+                    <label id="sbLabel" for="sbSet">Short break (minutes)</label>
+                    <input type="number" placeholder="5" id=sbSet>
+                        <div id="inputAreaMins"></div>
+                    </input>
+                    <p class="units">minutes</p>
+                    <label id="lbLabel" for="lbSet">Long break (minutes)</label>
+                    <input type="number" placeholder="15" id=lbSet>
+                        <div id="inputAreaMins"></div>
+                    </input>
+                    <button id="submitCustomTime">Let's Go!</button>
+                    <p class="units">minutes</p>
+                    <!-- Rounded switch -->
+                    <label id="switchLabel">Manually progress sessions</label>
+                    <label class="switch">
+                        <input id="switchItem" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </form>
+                </div>
+              </div>
                 
                 
                 <form id="section1" class="hide">
