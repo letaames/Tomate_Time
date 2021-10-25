@@ -29,7 +29,7 @@
                 <button id="pauseBtn" class="hide">Pause</button>
                 <button id="addFive" class="hide">Add 5 minutes</button>
                 <div id=setControls>
-                <button class="customBtn">Set custom times</button> 
+                <button id="controlBtn" class="customBtn">Set custom times</button> 
                 <!-- <svg id="stitch" viewBox="0 0 358 61" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
                     <!-- <path d="M2 58L61 3L120 58L179 3L238 58L297 3L356 58" stroke="#02320D" stroke-width="3"/> -->
                 <!-- </svg>   -->
@@ -41,30 +41,26 @@
                 
                 
                 <form id="section1" class="hide">
-                    <!-- <p id="title">Enter Times Below to Get Started</p> -->
-                    <!-- <label id="pomLabel" for="pomSet">Working session (minutes)</label> -->
-                    <!-- <input type="number" placeholder="25" id=pomSet> -->
-                        <!-- <div id="inputAreaMins"></div> -->
-                        <!-- <p class="units">minutes</p> -->
-                    <!-- </input> -->
-                    <!-- <p class="units">minutes</p> -->
-                    <!-- <label id="sbLabel" for="sbSet">Short break (minutes)</label> -->
-                    <!-- <input type="number" placeholder="5" id=sbSet> -->
-                        <!-- <div id="inputAreaMins"></div> -->
-                    <!-- </input> -->
-                    <!-- <p class="units">minutes</p> -->
-                    <!-- <label id="lbLabel" for="lbSet">Long break (minutes)</label> -->
-                    <!-- <input type="number" placeholder="15" id=lbSet> -->
-                        <!-- <div id="inputAreaMins"></div> -->
-                    <!-- </input> -->
-                    <!-- <button id="submitCustomTime">Let's Go!</button> -->
-                    <!-- <p class="units">minutes</p> -->
+                    <p id="title">Enter Times Below to Get Started</p>
+                    <label id="pomLabel" for="pomSet">Working session (minutes)</label>
+                    <input type="number" placeholder="25" id=pomSet>
+                        <div id="inputAreaMins"></div>
+                    </input>
+                    <label id="sbLabel" for="sbSet">Short break (minutes)</label>
+                    <input type="number" placeholder="5" id=sbSet>
+                        <div id="inputAreaMins"></div>
+                    </input>
+                    <label id="lbLabel" for="lbSet">Long break (minutes)</label>
+                    <input type="number" placeholder="15" id=lbSet>
+                        <div id="inputAreaMins"></div>
+                    </input>
+                    <button id="submitCustomTime">Let's Go!</button>
                     <!-- Rounded switch -->
-                    <!-- <label id="switchLabel">Manually progress sessions</label> -->
-                    <!-- <label class="switch"> -->
-                        <!-- <input id="switchItem" type="checkbox"> -->
-                        <!-- <span class="slider round"></span> -->
-                    <!-- </label> -->
+                    <label id="switchLabel">Manually progress sessions</label>
+                    <label class="switch">
+                        <input id="switchItem" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
                 </form>
         
             <div id="formattingTomato">
@@ -102,7 +98,8 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js" integrity="sha512-dMiBqqEV5i3KqpAdsgQSSZ72DnNib7otY0X+b/Tnn1EmLym1dxuZ19csdZqBnfDniKd9bmNtzStQzuMrIa5Ngw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="global.js"></script>
-<script src="open.js"></script>
+<!-- <script src="open.js"></script> -->
+<script src="slide.js"></script>
 <script src="tomato-movement.js"></script>
 <script src = "alarm.js"></script>
 <script src="timer.js"></script>

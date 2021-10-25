@@ -7,7 +7,13 @@ body {
     z-index: auto;
 }
 
-
+.toggle-container {
+    transition: height 0.35s ease-in-out;
+    overflow: hidden;
+  }
+  .toggle-container:not(.active) {
+    display: none;
+  }
 
 button {
     background-color: var(--accent);
@@ -98,7 +104,8 @@ header {
     padding-bottom: 1em;
     text-align: center;
     grid-area: controls;
-    display: none;
+    /* display: none; */
+    display: grid;
     grid-row-gap: .5em;
     column-gap: 1em;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -112,12 +119,14 @@ header {
     /* z-index: -1; */
     /* transition: 5s; */
     /* height: 0; */
+    transition: height 0.35s ease-in-out;
+    overflow: hidden;
+    
 }
 
-/* #section1.visible {
-    display: grid;
-    height: auto;
-} */
+#section1:not(.active) {
+    display: none;
+  }
 
 
 /* Sliders */
