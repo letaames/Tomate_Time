@@ -1,3 +1,52 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 480px) {
+    body header {
+        font-size: 2em;
+    }
+
+    body #tomatoSection > #timerContainer {
+        width: 380px;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+        grid-row-gap: 1em;
+        column-gap: 1em;
+        grid-template-areas: 
+        ". timeBreakdown timeBreakdown timeBreakdown ."
+        "timerDisplay timerDisplay timerDisplay timerDisplay timerDisplay"
+        ". button1 button2 start ."
+        ". setControls setControls setControls .";
+    }
+
+    body #tomatoSection{ 
+        padding-top: 1em;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body #tomatoSection > #timerContainer > #timer {
+        font-size: 20vw;
+    }
+
+    body #tomatoSection > #formattingTomato > #tomatoContainer{
+        width: 280px;
+    }
+
+    body button{
+        font-size: 1em;
+        height: 30px;
+        width: 100px;
+    }
+
+    body #tomatoSection > #timerContainer > #setControls > .customBtn{
+        width: 150px;
+    }
+    
+}
+
+
+
+    
 html,
 body {
     margin: 0;
@@ -51,19 +100,19 @@ button {
     --accent: #033202;
   }
 
-#bodyContainer {
-    display: grid;
-    grid-template-rows: auto 3fr 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" 
-    "main" 
+/* #bodyContainer { */
+    /* display: grid; */
+    /* grid-template-rows: auto 1fr; */
+    /* grid-template-columns: 1fr; */
+    /* grid-template-areas: "header"  */
+    /* "main"  */
     /* "about"  */
-    "footer";
-    font-family: 'Source Sans Pro', sans-serif;
-}
+    /* "footer"; */
+    /* font-family: 'Source Sans Pro', sans-serif; */
+/* } */
 
 header {
-    grid-area: header;
+    /* grid-area: header; */
     text-align: center;
     /* margin: 0 auto; */
     /* display: block; */
@@ -268,7 +317,7 @@ header {
 }
 
 #tomatoSection {
-    grid-area: main;
+    /* grid-area: main; */
     padding: 2em;
     display: grid;
     /* grid-row-gap: 1em; */

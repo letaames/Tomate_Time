@@ -131,7 +131,7 @@ function displayCountdown(TimeMS) {
 // Pomodoro tracker
 
 function makeFullPom() {
-    debugger;
+    // debugger;
     checkIfChecked();
     console.log("in Make full pom", manualProg);
     if (isPom === true) {
