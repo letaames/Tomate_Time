@@ -1,4 +1,4 @@
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 459px) {
     body header {
         font-size: 2em;
     }
@@ -72,7 +72,7 @@
         ". entry2 entry2 entry2 . "
         ". desc3 desc3 desc3 ."
         ". entry3 entry3 entry3 . "
-        ". switchLabel switchLable switch ."
+        ". switchLabel switchLabel switch ."
         ". startCustom startCustom startCustom .";
         }
 
@@ -85,6 +85,10 @@
         /* height: 350px; */
     }
 
+    html body #tomatoSection > #formattingTomato >  #tomatoContainer >#tomatoSVG {
+        width: 10vw;
+    }
+
     
 }
 
@@ -95,7 +99,7 @@
     }
 
     body #tomatoSection > #timerContainer {
-        width: 380px;
+        /* width: 380px; */
         display: grid;
         grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr 1fr;
         grid-template-rows: 1fr 2fr 1fr 1fr;
@@ -119,19 +123,43 @@
     }
 
     body #tomatoSection > #formattingTomato > #tomatoContainer{
-        width: 280px;
+        width: 90vw;
     }
 
     body button{
         font-size: 1em;
-        height: 30px;
-        width: 100px;
+        height: 6vh;
+        width: 20vw;
     }
 
     body #tomatoSection > #timerContainer > #setControls > .customBtn{
         width: 150px;
     }
 
+    body #tomatoSection > #section1 {
+        /* width: 275px; */
+        font-size: 1em;
+        padding-bottom: 1em;
+        grid-row-gap: 1em;
+        column-gap: 1em;
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-columns: repeat(5,1fr);
+        grid-template-areas: 
+        "title title title title title"
+        ". desc1 desc1 desc1 ."
+        ". entry1 entry1 entry1 . "
+        ". desc2 desc2 desc2 . "
+        ". entry2 entry2 entry2 . "
+        ". desc3 desc3 desc3 ."
+        ". entry3 entry3 entry3 . "
+        ". switchLabel switchLabel switch ."
+        ". . startCustom . .";
+        text-align: left;
+        }
+
+        #tomatoSection > #section1 >#switchLabel{
+            text-align: left;
+        }
     
     
 }
@@ -256,7 +284,7 @@ header {
     ". title title title ."
     ". desc1 desc2 desc3 ."
     ". entry1 entry2 entry3 ."
-    ". switchLabel switchLable switch ."
+    ". switchLabel switchLabel switch ."
     ". startCustom startCustom startCustom .";
     /* z-index: -1; */
     /* transition: 5s; */
