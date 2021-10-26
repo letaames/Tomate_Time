@@ -32,6 +32,7 @@
         padding-left: 0;
         padding-right: 0;
         grid-template-rows: auto auto 2fr;
+        width: 100vw;
         
     
     }
@@ -40,9 +41,6 @@
         font-size: 17vw;
     }
 
-    body #tomatoSection > #formattingTomato > #tomatoContainer{
-        width: 180px;
-    }
 
     body button{
         font-size: 1em;
@@ -80,6 +78,11 @@
 
     input.timeEntry{
        height: 2em; 
+    }
+
+    body #tomatoSection > #formattingTomato >  #tomatoContainer{
+        width: 90vw;
+        /* height: 350px; */
     }
 
     
