@@ -27,13 +27,11 @@
         height: 1vh;
     }
 
-
-
     body #tomatoSection{ 
         padding-top: 1em;
         padding-left: 0;
         padding-right: 0;
-        grid-template-rows: auto auto 1fr;
+        grid-template-rows: auto auto 2fr;
         
     
     }
@@ -56,9 +54,34 @@
         width: 150px;
     }
 
-    body #tomatoSection > #section1 {
-        width: 275px;
+    body #tomatoSection > #timerContainer > #setControls {
+        
     }
+
+    body #tomatoSection > #section1 {
+        /* width: 275px; */
+        font-size: 1em;
+        padding-bottom: 1em;
+        /* grid-row-gap: 1em; */
+        column-gap: 0;
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-columns: repeat(5,1fr);
+        grid-template-areas: 
+        "title title title title title"
+        ". desc1 desc1 desc1 ."
+        ". entry1 entry1 entry1 . "
+        ". desc2 desc2 desc2 . "
+        ". entry2 entry2 entry2 . "
+        ". desc3 desc3 desc3 ."
+        ". entry3 entry3 entry3 . "
+        ". switchLabel switchLable switch ."
+        ". startCustom startCustom startCustom .";
+        }
+
+    input.timeEntry{
+       height: 2em; 
+    }
+
     
 }
 
@@ -105,6 +128,8 @@
     body #tomatoSection > #timerContainer > #setControls > .customBtn{
         width: 150px;
     }
+
+    
     
 }
 
@@ -235,6 +260,7 @@ header {
     /* height: 0; */
     transition: height 0.35s ease-in-out;
     overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif; 
     
 }
 
@@ -582,16 +608,16 @@ footer {
     grid-area: footer;
 }
 
-.box {
+/* .box { */
     /* width: 300px; */
     /* border: 1px solid #000; */
     /* margin: 10px; */
     /* cursor: pointer; */
-  }
+  /* }
   .toggle-container {
     transition: height 0.35s ease-in-out;
     overflow: hidden;
   }
   .toggle-container:not(.active) {
     display: none;
-  }
+  } */
