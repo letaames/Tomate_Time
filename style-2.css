@@ -151,21 +151,22 @@ button {
   grid-area: entry3;
 }
 
-#switchLabel {
-  grid-area: label4;
+/* Sliders */
+
+#switchLabel{
+    grid-area: label4;
+    text-align: left;
+    position: relative;
+    display: inline-block;
 }
 
-/* switch function */
 
 .switch {
     grid-area: entry4;
-    /* padding-top: 60px; */
     position: relative;
     display: inline-block;
-    width: 83px;
+    width: 60px;
     height: 34px;
-    /* right: 50%; */
-    /* left: 25%; */
   }
   
   .switch input { 
@@ -207,9 +208,9 @@ button {
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(49px);
-    -ms-transform: translateX(49px);
-    transform: translateX(49px);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
   }
   
   /* Rounded sliders */
@@ -220,6 +221,8 @@ button {
   .slider.round:before {
     border-radius: 50%;
   }
+
+/* End sliders */
 
 
 #submitCustomTime {
