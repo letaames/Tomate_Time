@@ -14,7 +14,7 @@ body {
 
 .largeTitle{
     font-family: 'Playfair Display', serif, bold;
-    font-size: 5vh;
+    font-size: 10vw;
     text-align: center;
     padding-top: 1vh;
     padding-bottom: 2vh;
@@ -24,7 +24,7 @@ body {
 /* Timer display */
 
 #timer {
-    font-size: 10vh;
+    font-size: 20vw;
     /* height: 10vh; */
 }
 
@@ -40,10 +40,21 @@ body {
     /* padding-bottom: .5em; */
     padding-top: .5em;
     /* height: 2.5vh; */
-    font-size: 2.5vh;
+    font-size: 5vw;
 }
 
 /* Main buttons */
+
+#buttonContainer{
+    display: grid;
+    grid-template-rows: repeat(3,auto);
+    grid-template-columns: auto 55vw auto;
+    grid-template-areas:
+    ". start ."
+    ". button1 ."
+    ". button2 .";
+    margin-bottom: 2.5vh;
+}
 
 .selectionBtn{
     background-color: var(--accent);
@@ -51,7 +62,40 @@ body {
     color: white;
     /* border-radius: 15px; */
     border: none;
-    font-size: 1.5em;
+    font-size: 4.5vw;
+    /* width: 12vw; */
     cursor: pointer;
+    margin: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: .5vw;
+    padding-right: .5vw;
+    font-family: 'Source Sans Pro', sans-serif, bold; 
 }
+
+#submitTime {
+    grid-area: start;
+}
+
+#pauseBtn {
+    grid-area: button1;
+}
+
+#addFive {
+    grid-area: button2;
+}
+
+#controlBtn{
+    font-size: 3.25vw;
+    background-color: #E6F4E6;
+    text-align: center;
+    border: none;
+    color: var(--accent);
+    padding:0;
+    margin-bottom: 1vh;
+}
+
+
+
+
 
