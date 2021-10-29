@@ -1,102 +1,241 @@
 /* reset and base */
-*::after, *::before{
-    box-sizing: border-box;
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 html,
 body {
-    background-color: #BCE4BB;
-    color: #02320D;
-    font-family: 'Source Sans Pro', sans-serif; 
+  background-color: #bce4bb;
+  color: #02320d;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  font-size: 4.25vw;
 }
 
 /* header */
 
-.largeTitle{
-    font-family: 'Playfair Display', serif, bold;
-    font-size: 10vw;
-    text-align: center;
-    padding-top: 1vh;
-    padding-bottom: 2vh;
+.largeTitle {
+  font-family: "Playfair Display", serif, bold;
+  font-size: 10vw;
+  text-align: center;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
 }
 
 /* Timer section */
 /* Timer display */
 
 #timer {
-    font-size: 20vw;
-    /* height: 10vh; */
+  font-size: 20vw;
+  /* height: 10vh; */
 }
 
-#timerContainer{
-    background-color: #E6F4E6;
-    text-align: center;
-    margin-right: 5vw;
-    margin-left: 5vw;
-
+#timerContainer {
+  background-color: #e6f4e6;
+  text-align: center;
+  margin-right: 5vw;
+  margin-left: 5vw;
 }
 
-#timeDesc{
-    /* padding-bottom: .5em; */
-    padding-top: .5em;
-    /* height: 2.5vh; */
-    font-size: 5vw;
+h2 {
+  /* padding-bottom: .5em; */
+  padding-top: 0.5em;
+  /* height: 2.5vh; */
+  font-size: 5vw;
+  font-weight: bold;
 }
 
 /* Main buttons */
 
-button{
-    border: none;
-    font-family: 'Source Sans Pro', sans-serif, bold; 
-    cursor: pointer;
-    text-align: center;
+button {
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  cursor: pointer;
+  text-align: center;
 }
 
-#buttonContainer{
-    display: grid;
-    grid-template-rows: repeat(3,auto);
-    grid-template-columns: auto 55vw auto;
-    grid-template-areas:
+#buttonContainer {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: auto 55vw auto;
+  grid-template-areas:
     ". start ."
     ". button1 ."
     ". button2 .";
-    margin-bottom: 2.5vh;
+  margin-bottom: 2.5vh;
 }
 
-.selectionBtn{
-    background-color: var(--accent);
-    color: white;
-    /* border-radius: 15px; */
-    font-size: 4.5vw;
-    /* width: 12vw; */
-    margin: 1vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    padding-left: .5vw;
-    padding-right: .5vw;
+.selectionBtn {
+  background-color: var(--accent);
+  color: white;
+  /* border-radius: 15px; */
+  font-size: 4.5vw;
+  /* width: 12vw; */
+  margin: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
 }
 
 #submitTime {
-    grid-area: start;
+  grid-area: start;
 }
 
 #pauseBtn {
-    grid-area: button1;
+  grid-area: button1;
 }
 
 #addFive {
-    grid-area: button2;
+  grid-area: button2;
 }
 
-#controlBtn{
-    font-size: 3.25vw;
-    background-color: #E6F4E6;
-    color: var(--accent);
-    padding:0;
-    margin-bottom: 1vh;
+#controlBtn {
+  background-color: #e6f4e6;
+  color: var(--accent);
+  padding: 0;
+  margin-bottom: 1vh;
 }
 
+/* Controls */
+
+#setControlsForm {
+  text-align: left;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  margin-right: 5vw;
+  margin-left: 5vw;
+  row-gap: 1vh;
+  grid-template-areas:
+    "intro intro intro intro intro"
+    ". label1 label1 entry1 . "
+    ". label2 label2 entry2 ."
+    ". label3 label3 entry3 . "
+    ". label4 label4 entry4 ."
+    ". customStart customStart customStart .";
+  transition: height 0.35s ease-in-out;
+  overflow: hidden;
+}
+
+#introTitle {
+  grid-area: intro;
+  align-self: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+#pomLabel {
+  grid-area: label1;
+}
+
+#pomSet {
+  grid-area: entry1;
+}
+
+#sbLabel {
+  grid-area: label2;
+}
+
+#sbSet {
+  grid-area: entry2;
+}
+
+#lbLabel {
+  grid-area: label3;
+}
+
+#lbSet {
+  grid-area: entry3;
+}
+
+#switchLabel {
+  grid-area: label4;
+}
+
+/* switch function */
+
+.switch {
+    grid-area: entry4;
+    /* padding-top: 60px; */
+    position: relative;
+    display: inline-block;
+    width: 83px;
+    height: 34px;
+    /* right: 50%; */
+    /* left: 25%; */
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #02320D;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(49px);
+    -ms-transform: translateX(49px);
+    transform: translateX(49px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
 
+#submitCustomTime {
+  grid-area: customStart;
+}
 
+.timeEntry {
+  width: 20vw;
+  font-size: 6vw;
+  align-self: center;
+  justify-self: right;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+}
 
+label {
+  align-self: center;
+  font-size: 5vw;
+}

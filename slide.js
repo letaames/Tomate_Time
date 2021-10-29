@@ -4,7 +4,7 @@ linkToggle.addEventListener('click', function(event){
 
     event.preventDefault();
 
-    var container = document.getElementById("section1");
+    var container = document.getElementById("setControlsForm");
 
     if (!container.classList.contains('active')) {
       
