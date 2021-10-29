@@ -45,6 +45,13 @@ body {
 
 /* Main buttons */
 
+button{
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif, bold; 
+    cursor: pointer;
+    text-align: center;
+}
+
 #buttonContainer{
     display: grid;
     grid-template-rows: repeat(3,auto);
@@ -58,19 +65,15 @@ body {
 
 .selectionBtn{
     background-color: var(--accent);
-    text-align: center;
     color: white;
     /* border-radius: 15px; */
-    border: none;
     font-size: 4.5vw;
     /* width: 12vw; */
-    cursor: pointer;
     margin: 1vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
     padding-left: .5vw;
     padding-right: .5vw;
-    font-family: 'Source Sans Pro', sans-serif, bold; 
 }
 
 #submitTime {
@@ -88,8 +91,6 @@ body {
 #controlBtn{
     font-size: 3.25vw;
     background-color: #E6F4E6;
-    text-align: center;
-    border: none;
     color: var(--accent);
     padding:0;
     margin-bottom: 1vh;
