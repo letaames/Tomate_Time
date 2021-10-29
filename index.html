@@ -11,23 +11,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style-2.css">
     <title>Document</title>
 </head>
 
 <body>
     <!-- <div id=bodyContainer> -->
-        <header>Tick-Tock-Tomato!</header>
+        <header class="largeTitle">Tom-Tim!</header>
         <div id="tomatoSection">
             <!-- <div id="stitchHolder"> -->
             <div id="timerContainer">
-                <div id="timeBreakdown">
-                    <p id="timeDesc"></p>
-                </div> 
-                <div id="timer">00:00:00</div>
-                <button id="submitTime" class="startBtn">Let's Go!</button>
-                <button id="pauseBtn" class="hide">Pause</button>
-                <button id="addFive" class="hide">+5 minutes</button>
+                <!-- <div id="timeBreakdown"> -->
+                    <h2 id="timeDesc">Time to Work</h2>
+                <!-- </div>  -->
+                <p id="timer">00:00:00</p>
+                <button id="submitTime" class="selectionBtn startBtn">Let's Go!</button>
+                <button id="pauseBtn" class="selectionBtn hide">Pause</button>
+                <button id="addFive" class="selectionBtn hide">+5 minutes</button>
                 <div id=setControls>
                 <button id="controlBtn" class="customBtn">Set custom times</button> 
                 <!-- <svg id="stitch" viewBox="0 0 358 61" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
