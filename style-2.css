@@ -266,7 +266,11 @@ label {
 
 
 .rotate{
-    animation: rotation 3s infinite ease-in-out;
+    animation: rotation 10s infinite ease-in-out;
+}
+
+.scaleDown{
+    animation: scaleDown 20s infinite ease-in-out;
 }
 
 /* keyframes */
@@ -277,5 +281,14 @@ label {
     }
     to {
       transform: rotate(359deg);
+    }
+  }
+
+  @keyframes scaleDown {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0);
     }
   }
