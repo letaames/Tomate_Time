@@ -1,3 +1,153 @@
+@media only screen and (min-width: 710px){
+
+  body .largeTitle {
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+    font-size: 6vw;
+  }
+
+  #timerContainer > #buttonContainer {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas:
+      "start button1 button2";
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  body .selectionBtn {
+    /* border-radius: 15px; */
+    font-size: 3vw;
+    /* width: 12vw; */
+  }
+
+  #controlBtn {
+    font-size: 2.5vw;
+  }
+
+  body label {
+    font-size: 3vw;
+  }
+
+  body .timeEntry {
+    font-size: 3vw;
+  }
+
+  body h2 {
+    font-size: 3.5vw;
+  }
+
+  body .switch {
+    position: relative;
+    left: 6.5vw;
+    display: inline-block;
+    width: 90px;
+    height: 51px;
+  }
+
+  body .slider:before {
+    height: 39px;
+    width: 39px;
+    left: 6px;
+    bottom: 6px;
+  }
+
+  body input:checked + .slider:before {
+    -webkit-transform: translateX(39px);
+    -ms-transform: translateX(39px);
+    transform: translateX(39px);
+  }
+  
+  body #tomatoSVG { 
+    width: 35vw;
+    height: 35vw;
+}
+  
+}
+
+@media only screen and (min-width: 1000px){
+
+  #timerContainer > #buttonContainer {
+    column-gap: 3vw;
+  }
+
+  body .selectionBtn {
+    /* border-radius: 15px; */
+    font-size: 2.5vw;
+    /* width: 12vw; */
+  }
+
+  #controlBtn {
+    font-size: 2vw;
+  }
+
+  body label {
+    font-size: 2vw;
+  }
+
+  body .timeEntry {
+    justify-self: center;
+    width: 10vw;
+    font-size: 3vw;
+  }
+
+  body h2 {
+    font-size: 3vw;
+  }
+
+  body .switch {
+    position: relative;
+    left: 4vw;
+    display: inline-block;
+    width: 90px;
+    height: 51px;
+  }
+
+  body .slider:before {
+    height: 39px;
+    width: 39px;
+    left: 6px;
+    bottom: 6px;
+  }
+
+  body input:checked + .slider:before {
+    -webkit-transform: translateX(39px);
+    -ms-transform: translateX(39px);
+    transform: translateX(39px);
+  }
+  
+  body #tomatoSVG { 
+    width: 35vw;
+    height: 35vw;
+}
+
+body #setControlsForm {
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+  grid-template-rows: repeat(3, 5vw) 7vw 5vw;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  /* margin-bottom: 5vw; */
+  row-gap: 2vw;
+  column-gap: 0;
+  grid-template-areas:
+    "intro intro intro intro intro intro "
+    ". label1 label2 label3 label4 . "
+    ". entry1 entry2 entry3 entry4 ."
+    ". . customStart customStart . ."
+    ". . . . . .";
+}
+
+  
+  
+  
+}
+
+
+
 /* reset and base */
 *::after,
 *::before {
@@ -12,6 +162,7 @@ body {
   text-align: center;
   font-size: 4.25vw;
 }
+
 
 /* header */
 
@@ -264,6 +415,10 @@ label {
     height: var(--width);
 }
 
+#tomatoBox{
+  /* width: var(--width); */
+}
+
 
 .rotate{
     animation: rotation 10s infinite ease-in-out;
@@ -271,6 +426,13 @@ label {
 
 .scaleDown{
     animation: scaleDown 20s infinite ease-in-out;
+}
+
+/* footer */
+
+/* added to avoid tomato jumping */
+footer {
+  height: 200px;
 }
 
 /* keyframes */
@@ -292,3 +454,4 @@ label {
       transform: scale(0);
     }
   }
+
