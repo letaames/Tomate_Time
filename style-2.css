@@ -105,17 +105,19 @@ button {
   justify-content: center;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr) 5vw;
   margin-right: 5vw;
   margin-left: 5vw;
-  row-gap: 1vh;
+  /* margin-bottom: 5vw; */
+  row-gap: 1vw;
   grid-template-areas:
     "intro intro intro intro intro"
     ". label1 label1 entry1 . "
     ". label2 label2 entry2 ."
     ". label3 label3 entry3 . "
     ". label4 label4 entry4 ."
-    ". customStart customStart customStart .";
+    ". customStart customStart customStart ."
+    ". . . . .";
   transition: height 0.35s ease-in-out;
   overflow: hidden;
 }
@@ -241,4 +243,23 @@ button {
 label {
   align-self: center;
   font-size: 5vw;
+}
+
+/* Tomato */
+
+#tomatoContainer{
+    background-color: #D0ECCF;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+}
+
+#tomatoSVG { 
+    width: var(--width);
+    height: var(--width);
+}
+
+#formattingTomato{
+    width:100%;
+    height: 100%;
 }

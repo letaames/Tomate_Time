@@ -10,7 +10,7 @@ linkToggle.addEventListener('click', function(event){
       
       container.classList.add('active');
       container.style.height = 'auto';
-
+      
       var height = container.clientHeight + 'px';
 
       container.style.height = '0px';
