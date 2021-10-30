@@ -122,6 +122,10 @@ button {
   overflow: hidden;
 }
 
+#setControlsForm:not(.active) {
+    display: none;
+  }
+
 #introTitle {
   grid-area: intro;
   align-self: center;
@@ -252,6 +256,7 @@ label {
     margin-left: 5vw;
     margin-right: 5vw;
     text-align: center;
+    padding: 5vw;
 }
 
 #tomatoSVG { 
@@ -259,7 +264,18 @@ label {
     height: var(--width);
 }
 
-#formattingTomato{
-    width:100%;
-    height: 100%;
+
+.rotate{
+    animation: rotation 3s infinite ease-in-out;
 }
+
+/* keyframes */
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
